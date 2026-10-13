@@ -12,14 +12,21 @@
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN ESTÁTICA Y LIMPIA -->
+  <!-- BARRA DE NAVEGACIÓN RESPONSIVE (Horizontal en PC, Menú Desplegable en Celular) -->
   <header class="navbar">
     <div class="logo">
-      <!-- LOGO REEMPLAZANDO EL EMOJI -->
       <img src="416d0551-280c-47e2-aeec-617f1c7d3563(4).png" alt="TechSmart Logo" class="logo-img">
       <span class="logo-text">TechSmart</span>
     </div>
     
+    <!-- Checkbox y Botón Hamburguesa (Solo visible en móviles) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
     <nav class="nav-menu">
       <ul>
         <li><a href="#quienes-somos">Quiénes Somos</a></li>
@@ -347,7 +354,6 @@
   <footer>
     <p>TechSmart © 2026 - Proyecto Escolar de Tecnología | Vincent Yarid Suárez Tangarife - Grado 1008</p>
     
-    <!-- SECCIÓN DE CONTACTO DIRECTO -->
     <div class="contact-box">
       <p>¿Tienes alguna duda sobre qué celular elegir o necesitas asesoría personalizada?</p>
       <a href="https://wa.me/573028477374" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">

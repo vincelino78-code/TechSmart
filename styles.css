@@ -1,5 +1,5 @@
 /* =========================================================
-   ESTILOS GENERALES (SIN SOMBRAS Y CON LOGO ADAPTADO)
+   ESTILOS GENERALES (SIN SOMBRAS / FLAT DESIGN)
    ========================================================= */
 
 * {
@@ -24,7 +24,7 @@ body {
   padding: 0 20px;
 }
 
-/* BARRA DE NAVEGACIÓN ESTÁTICA Y LIMPIA */
+/* BARRA DE NAVEGACIÓN (Horizontal en PC) */
 .navbar {
   position: sticky;
   top: 0;
@@ -43,12 +43,10 @@ body {
   gap: 12px;
 }
 
-/* ESTILO Y FILTRO PARA REMOVER FONDO DEL LOGO EN EL MENÚ */
 .logo-img {
-  height: 85px;
+  height: 38px;
   width: auto;
   object-fit: contain;
-  /* Invierte el logo negro a blanco para que resalte en el fondo oscuro */
   filter: invert(1);
   mix-blend-mode: screen; 
 }
@@ -58,6 +56,11 @@ body {
   font-weight: bold;
   color: #0088ff;
   letter-spacing: 1px;
+}
+
+/* Checkbox y botón hamburguesa ocultos por defecto en PC */
+.menu-toggle, .menu-btn {
+  display: none;
 }
 
 .nav-menu ul {
@@ -311,18 +314,56 @@ footer {
   transform: scale(1.03);
 }
 
-/* ADAPTACIÓN MÓVIL */
+/* =========================================================
+   ADAPTACIÓN MÓVIL (MENÚ DESPLEGABLE VERTICAL)
+   ========================================================= */
 @media (max-width: 768px) {
-  .navbar {
+  .menu-btn {
+    display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-  }
-  .nav-menu ul {
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 5px;
+    cursor: pointer;
   }
+
+  .menu-btn span {
+    width: 26px;
+    height: 3px;
+    background-color: #e1e1e6;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #181c26;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+    opacity: 0;
+    border-bottom: 1px solid #2d3748;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 0;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 12px 25px;
+    border-radius: 0;
+  }
+
+  /* Al hacer clic en el botón, el checkbox se activa y despliega el menú vertical */
+  .menu-toggle:checked ~ .nav-menu {
+    max-height: 350px;
+    opacity: 1;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
   }
