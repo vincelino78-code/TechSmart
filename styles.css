@@ -377,10 +377,28 @@ footer {
   -webkit-overflow-scrolling: touch;
   margin-top: 15px;
 }
+/* REGLAS PARA HABILITAR EL DESLIZAMIENTO DE LA TABLA EN CELULAR */
+.table-scroll-wrapper {
+  width: 100%;
+  display: block;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x;
+  margin-top: 15px;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+}
 
 .min-table {
   width: 100%;
-  min-width: 600px; /* Garantiza que las columnas tengan buen espacio */
+  min-width: 550px; /* Forzar el ancho suficiente para que active el scroll horizontal */
   border-collapse: collapse;
 }
 
+.min-table th, .min-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #2d3748;
+  white-space: normal;
+  word-wrap: break-word;
+}
