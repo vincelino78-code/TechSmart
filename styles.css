@@ -43,12 +43,13 @@ body {
   gap: 12px;
 }
 
+/* AJUSTE Y FILTRO DEL LOGO EN EL ENCABEZADO */
 .logo-img {
-  height: 38px;
+  height: 36px;
   width: auto;
   object-fit: contain;
-  filter: invert(1);
-  mix-blend-mode: screen; 
+  filter: invert(1) brightness(1.8);
+  mix-blend-mode: screen;
 }
 
 .logo-text {
@@ -57,6 +58,7 @@ body {
   color: #0088ff;
   letter-spacing: 1px;
 }
+
 
 /* Checkbox y botón hamburguesa ocultos por defecto en PC */
 .menu-toggle, .menu-btn {
@@ -368,3 +370,17 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* CONTENEDOR PARA DESPLAZAR LA TABLA EN PANTALLAS PEQUEÑAS */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 15px;
+}
+
+.min-table {
+  width: 100%;
+  min-width: 600px; /* Garantiza que las columnas tengan buen espacio */
+  border-collapse: collapse;
+}
+
